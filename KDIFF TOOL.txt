@@ -1,0 +1,23 @@
+===============
+    kdiff3
+===============
+--> kdiff3 is a software package intended to merge two or more files or directories. 
+--> Not only is this useful for programmers and developers, but a line-by-line differential analysis provides an extra sense of 
+    functionality when comparing different sources. 
+--> These disparities can then be printed out through the use of a highly intuitive Graphical User Interface (GUI). 
+    KTE4, Unix and Microsoft operating systems are currently supported although there is a newer version intended for Mac users.
+
+PROS:
+------
+--> This open-source software is free to download and install.
+--> Cross-platform compatibility enhances the flexibility of kdiff3.
+
+CONS:
+-----
+--> The last update apparently took place in 2014.
+--> This system is intended to be used by those with prior developmental experience.
+
+===========================================================================
+How to Download
+https://en.softonic.com/download/kdiff3/windows/post-download
+===========================================================================
