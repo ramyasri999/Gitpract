@@ -42,7 +42,7 @@ public class UserRegisterAction extends Action
 	            while (rs12.next())
 	            {
 
-	                temp_user = rs12.getString("Userid"); 
+	                temp_user = rs12.getString(Userid); 
 	                //System.out.println(temp_user);
 	                if(temp_user.equals(Userid))
 	               
