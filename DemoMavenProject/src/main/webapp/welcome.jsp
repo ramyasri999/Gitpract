@@ -25,7 +25,7 @@
 <body>
 <center>
 <h2>Hi! <%=session.getAttribute("userName") %> Welcome to Daily Expenses Application</h2>
-<a href='#' class="button">Expenses Form</a>
+<a href='expenseform.jsp' class="button">Expenses Form</a>
 <a href ='#' class ="button">Reports</a>
 <a href ='login.jsp' class ="button">Logout</a>
 </center>
