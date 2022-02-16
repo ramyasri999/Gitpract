@@ -1,22 +1,25 @@
 package com.jwt.struts.form;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
-import com.jwt.struts.action.*;
-import java.lang.*;
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;  
 
 
-public class UserRegisterForm extends ActionForm 
+public class UserRegisterForm extends ActionForm implements SessionAware
 {
 
 	private static final long serialVersionUID = 1L;
 	private String Userid;
 	private String userName;
 	private String password;
+	SessionMap sessionmap;  
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request) 
 	{
 		ActionErrors errors = new ActionErrors();
@@ -66,5 +69,15 @@ public class UserRegisterForm extends ActionForm
 	{
 		this.password = password;
 	}
-	
+	public void setSession(Map map) 
+	{  
+	    sessionmap=(SessionMap)map;  
+	    sessionmap.put("login","true");  
+	}  
+	  
+	public String logout()
+	{  
+	    sessionmap.invalidate();  
+	    return "success";  
+	}  
 }

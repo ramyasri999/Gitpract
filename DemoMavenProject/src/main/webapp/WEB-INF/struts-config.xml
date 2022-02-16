@@ -22,8 +22,8 @@
 			type="com.jwt.struts.action.ExpenseFormAction">
 			<forward name="success" path="/success.jsp" />
 			<forward name ="error" path ="/error.jsp" />
-			<forward name ="welcome" path ="/welcome.jsp" />
-		</action>
+			<forward name ="welcome" path ="/retreive.jsp" />
+		</action> 
 	</action-mappings>
 
 	<message-resources parameter="com/jwt/struts/action/ApplicationResource" />

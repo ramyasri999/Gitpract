@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/struts-html" prefix="html" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
 <head>
-<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+<!-- Fonts CSS - Recommended but not required -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssbutton/cssbutton.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
 h2{  
@@ -15,45 +14,44 @@ h2{
     padding: 20px;  
     padding-right:5px;
 } 
-span
-{
-	margin-left:50px;
-}
-
 </style>
 <title>Login Here</title>
 </head>
-<body bgcolor="silver">
-<br></br>
-<body>
 
+<body bgcolor="silver"><br></br>
+
+<body>
 <center>
 <h2>LOGIN HERE</h2>
-
 <html:html>
     <div class ="login"style="color:red">
     <html:errors />
-    	</div>
-	<html:form action="/register" method="get">
+    </div>
+	<html:form action="/register" method="post">
 		<span style ="margin-left:60px;font-family:'Arial'">UserId:</span>
 		<html:text property="userid" size="30"></html:text><br><br>
 		<span style ="margin-left:30px;font-family:'Arial'">UserName:</span>
 		<html:text  property="userName" size="30"></html:text><br><br>
 		<span style ="margin-left:30px;font-family:'Arial'">Password:</span>
 		<html:text property="password" size="30"></html:text><br><br>
-		<br>
-	<span><html:submit>Submit</html:submit>
-	 <html:reset>Reset</html:reset>
-		<br><br>
+       	<html>
+       		<span class="form">
+       		<form action="/welcome.jsp">
+       		<div class ="yui3-skin-sam" style ="margin-left:70px">
+       		<input type="submit" class ="yui3-button" value="Submit">
+       		<button type="reset" class ="yui3-button" value="Reset">Reset</button>
+       		</div> 
+       		</form>
+       		</span>
+       	</html>
 	</html:form>
-	</div>
 </html:html>
 </center>
 </body>
-
 </html>
 
-
+	<%--<html:submit>Submit</html:submit>
+	  <html:reset>Cancel</html:reset>
 <%--<html>    
 <head>    
     <title>Login Form</title>    
@@ -148,4 +146,7 @@ a{
 </body>    
 </html>    
 --%>
+
+
+
 

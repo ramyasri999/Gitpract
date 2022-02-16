@@ -3,8 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.18.1/build/cssbutton/cssbutton.css">
 <style>
-.button {
+.yui3-button
+{
+	<%-- background-color: #E8BEAC; --%>
+	
+}
+
+.button 
+{
   background-color: #E8BEAC;
   border: none;
   color: #174153;
@@ -22,12 +30,14 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="yui3-skin-sam">
 <center>
 <h2>Hi! <%=session.getAttribute("userName") %> Welcome to Daily Expenses Application</h2>
-<a href='expenseform.jsp' class="button">Expenses Form</a>
-<a href ='#' class ="button">Reports</a>
-<a href ='login.jsp' class ="button">Logout</a>
+<div class ="yui3-skin-sam">
+<a href ='expenseform.jsp' class ="yui3-button">Expenses Form</a>
+<a href ='#' class ="yui3-button">Reports</a>
+<a href ='#' class ="yui3-button">Logout</a>
+</div>
 </center>
 </body>
 </html>
