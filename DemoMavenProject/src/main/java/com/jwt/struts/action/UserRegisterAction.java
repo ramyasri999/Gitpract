@@ -16,7 +16,7 @@ import org.apache.struts.action.ActionMapping;
 
 import com.jwt.struts.dao.UserRegisterDAO;
 import com.jwt.struts.form.UserRegisterForm;
-
+//action class
 public class UserRegisterAction extends Action 
 {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception 

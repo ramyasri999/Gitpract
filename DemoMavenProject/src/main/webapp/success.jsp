@@ -15,7 +15,7 @@
 
 
 <h1>Your Expenses Details has been Saved Successfully </h1>
-<a href ='retrieve.jsp'>Fetch data</a>
+<a href ='welcome.jsp'>Go Back</a>
 
 
 

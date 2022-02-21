@@ -35,7 +35,7 @@
 <h2>Hi! <%=session.getAttribute("userName") %> Welcome to Daily Expenses Application</h2>
 <div class ="yui3-skin-sam">
 <a href ='expenseform.jsp' class ="yui3-button">Expenses Form</a>
-<a href ='#' class ="yui3-button">Reports</a>
+<a href ='retrieve.jsp' class ="yui3-button">Reports</a>
 <a href ='#' class ="yui3-button">Logout</a>
 </div>
 </center>

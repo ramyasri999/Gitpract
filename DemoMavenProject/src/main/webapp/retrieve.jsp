@@ -47,9 +47,8 @@ var table = new Y.DataTable(
 });
 table.render("#example");
 });
-</SCRIPT>
-<%--
-<h1>Your Expenses Details </h1>
+</SCRIPT> 
+<%--<h1>Your Expenses Details </h1>
 		<table border="1">
 		<tr>
 		<td>EXP_ID</td>
@@ -96,5 +95,7 @@ table.render("#example");
 		%>
 		<a href ='login.jsp'>Go Back</a>
 		</table> --%>
+<br><br>
+<a href ="welcome.jsp">Go back</a>
 </body>
 </html>	
