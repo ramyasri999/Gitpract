@@ -32,43 +32,51 @@ public class UserRegisterAction extends Action
 		ses.setAttribute("Userid", Userid);
 		ses.setAttribute("userName", userName);
 		ses.setAttribute("password",password);
-		String temp_user = null;
-		try
+		if (Userid.equals("") || userName.equals("") || password.equals(""))
 		{
-	            Class.forName("oracle.jdbc.driver.OracleDriver");
-	            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "system", "oracle");
-	            Statement st12 = con.createStatement();
-	            ResultSet rs12 = st12.executeQuery("select userid from users");
-	            while (rs12.next())
-	            {
-
-	                temp_user = rs12.getString(Userid); 
-	                //System.out.println(temp_user);
-	                if(temp_user.equals(Userid))
-	               
-	                {
-	           
-	        			//System.out.println("error for if block");
-	                	return mapping.findForward("error");
-	                }
-	               // System.out.println(Userid);
-	              // request.getRequestDispatcher("/success.jsp").forward(request, response);
-	                return mapping.findForward("success");
-	               
-	               
-	            }
-	           st12.close();
-        } 
-		catch (Exception e)
-		{
-            e.printStackTrace();
-        }
-//		if(!Userid.equals(temp_user))
-//        {
-//			return mapping.findForward("success");
-//        }
+			return mapping.findForward("error");
+		}
 		return mapping.findForward("welcome");
-		
+
 	}
-	
 }
+//		String temp_user = null;
+//		try
+//		{
+//	            Class.forName("oracle.jdbc.driver.OracleDriver");
+//	            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "system", "oracle");
+//	            Statement st12 = con.createStatement();
+//	            ResultSet rs12 = st12.executeQuery("select userid from users");
+//	            while (rs12.next())
+//	            {
+//
+//	                temp_user = rs12.getString(Userid); 
+//	                //System.out.println(temp_user);
+//	                if(temp_user.equals(Userid))
+//	               
+//	                {
+//	           
+//	        			//System.out.println("error for if block");
+//	                	return mapping.findForward("error");
+//	                }
+//	               // System.out.println(Userid);
+//	              // request.getRequestDispatcher("/success.jsp").forward(request, response);
+//	                return mapping.findForward("success");
+//	               
+//	               
+//	            }
+//	           st12.close();
+//        } 
+//		catch (Exception e)
+//		{
+//            e.printStackTrace();
+//        }
+////		if(!Userid.equals(temp_user))
+////        {
+////			return mapping.findForward("success");
+////        }
+//		return mapping.findForward("welcome");
+//		
+//	}
+//	
+

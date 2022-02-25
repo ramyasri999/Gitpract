@@ -7,49 +7,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retriving Data</title>
+<style>
+.yui3-skin-sam
+{
+	background-image: linear-gradient(transparent 40%,rgba(0,0,0,0.21));
+    color: #000;
+    font-weight: normal;
+    text-align: left;
+    text-shadow: 0 1px 1px #fff;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-family: arial,sans-serif;
+	
+}
+table
+{
+  	border-spacing: 0px;
+  	border:1px solid #cbcbcb;
+	background-color: #fff;
+ 	border-left: 1px solid #dedede;
+	column-gap: 3%;
+}
+tr:nth-child(even) 
+{
+            background-color: #edf5ff; 
+}
+td
+{	
+	padding:5px;
+	border: 0px solid #cbcbcb;
+	border:0px;
+	color:#ffffff;
+	font-family: arial,sans-serif;	
+}
+table tr td 
+{
+  border-right: 1px solid #dedede;
+  color: black; 
+} 
+</style>
+<title>Retrieving Data</title>
 </head>
-<body class="example yui3-skin-sam">
+<body>
 <SCRIPT type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></SCRIPT>
-<SCRIPT type="text/javascript">
-        // Create a new YUI instance and populate it with the required modules.
-YUI().use('datatable', function (Y) 
-{
-			//var conObj = new ActiveXObject('ADODB.Connection');
-    		//var conString = "Provider=OraOLEDB.Oracle; Data Source=(DESCRIPTION=(CID=GTU_APP)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=202.125.144.34)(PORT=1521)))(CONNECT_DATA=(SID=orcl)(SERVER=DEDICATED)));User Id=system; Password=oracle;"
-   			//conObj.Open(conString);
-    		//var rs =  new ActiveXObject("ADODB.Recordset");
-    		//sql = "SELECT * from expenses"
-   			// rs.open(sql,conString);
-    		//var rsnum=rs.fields.count;
-    		//alert(rsnum);
-    		//rs.close;
-    		//conObj.close;
-    		// var data = [{sql}];
-           
-	       // var oracle = require('oracle');
-			//var connectData = {hostname: "localhost",port: 1521,database: "orcl", // System ID (SID)
-			//user: "system",password: "oracle"};
-            // Columns must match data object property names
-           
-            var data = [{ EXP_ID: "2",USER_ID: "2",EXP_RECORD_DATE: "2022-02-08 00:00:00",EXP_DATE: "2022-02-08 00:00:00 ",EXP_CATEGORY_ID:"8",EXP_DESC:"clothing",COST:"1500" },
-               // { id: "sp-9980", name: "sprocket", price: "$3.75", cost: "$3.25" },
-               // { id: "wi-0650", name: "widget",   price: "$4.25", cost: "$3.75" }
-           ];
-
-var table = new Y.DataTable(
-{
-   columns: ["EXP_ID", "USER_ID", "EXP_RECORD_DATE","EXP_DATE","EXP_CATEGORY_ID","EXP_DESC","COST"],
-   data: data,
-   //myDataSource.responseSchema = {fields: ["EXP_ID", "USER_ID", "EXP_RECORD_DATE","EXP_DATE","EXP_CATEGORY_ID","EXP_DESC","COST"]};
-   // Optionally configure your table with a caption
-    caption: "Your Expenses Details",
-});
-table.render("#example");
-});
-</SCRIPT> 
-<%--<h1>Your Expenses Details </h1>
-		<table border="1">
+	<h1>Your Expenses Details </h1>
+		<table>
+		<tbody class="yui3-skin-sam">
 		<tr>
 		<td>EXP_ID</td>
 		<td>USER_ID</td>
@@ -58,9 +61,9 @@ table.render("#example");
 		<td>EXP_CATEGORY_ID</td>
 		<td>EXP_DESC</td>
 		<td>COST</td>
-
 		</tr>
-		<%
+		</tbody>
+		<% 
 		try
 		{
 			Connection connection = null;
@@ -76,13 +79,10 @@ table.render("#example");
 				<td><%=resultSet.getString("EXP_ID") %></td>
 				<td><%=resultSet.getString("USER_ID") %></td>
 				<td><%=resultSet.getString("EXP_RECORD_DATE") %></td>
-		
 				<td><%=resultSet.getString("EXP_DATE") %></td>
-		
 				<td><%=resultSet.getString("EXP_CATEGORY_ID") %></td>
 				<td><%=resultSet.getString("EXP_DESC") %></td>
 				<td><%=resultSet.getString("COST") %></td>
-		
 				</tr>
 				<%
 			}
@@ -93,9 +93,8 @@ table.render("#example");
 			e.printStackTrace();
 		}
 		%>
-		<a href ='login.jsp'>Go Back</a>
-		</table> --%>
-<br><br>
-<a href ="welcome.jsp">Go back</a>
+		</table>
+		<br><br>
+		<a href ="welcome.jsp">Go back</a>
 </body>
 </html>	

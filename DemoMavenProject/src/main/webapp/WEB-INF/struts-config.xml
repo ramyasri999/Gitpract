@@ -4,28 +4,50 @@
 "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
 "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
 
-
 <struts-config>
+
 	<form-beans>
-		<form-bean name="registerForm" type="com.jwt.struts.form.UserRegisterForm" />
-		<form-bean name="expenseForm" type="com.jwt.struts.form.ExpenseForm" />
+		<form-bean name="registerForm" type="com.jwt.struts.form.UserRegisterForm" /> 	<!-- for login page validation -->
+		<form-bean name="expenseForm" type="com.jwt.struts.form.ExpenseForm" />  <!-- for expense form validation -->
+		<form-bean name="expenses" type="com.jwt.struts.form.ExpenseForm" /> <!-- for welcome page - expense form -->
+		<form-bean name="reports" type="com.jwt.struts.form.ExpenseForm" /> <!-- for welcome page - reports -->
+		<form-bean name ="logout" type ="com.jwt.struts.form.UserRegisterForm"/> <!-- for welcome page - logout -->
 	</form-beans>
 
 	<action-mappings>
-		<action input="/login.jsp" name="registerForm" path="/register"
-			type="com.jwt.struts.action.UserRegisterAction">
-			<forward name="success" path="/success.jsp" />
-			<forward name ="error" path ="/error.jsp" />
+		
+		<!-- for login page validation -->
+		<action input="/login.jsp" name="registerForm" path="/register" type="com.jwt.struts.action.UserRegisterAction">
+			<!--  <forward name="success" path="/success.jsp" /> --> 
+			<!--  <forward name ="error" path ="/error.jsp" /> -->
 			<forward name ="welcome" path ="/welcome.jsp" />
 		</action>
-		<action input="/expenseform.jsp" name="expenseForm" path="/expense"
-			type="com.jwt.struts.action.ExpenseFormAction">
-			<forward name="success" path="/success.jsp" />
-			<forward name ="error" path ="/error.jsp" />
-			<forward name ="welcome" path ="/retreive.jsp" />
+		
+		<!-- for expense form validation -->
+		<action input="/expenseform.jsp" name="expenseForm" path="/expense" type="com.jwt.struts.action.ExpenseFormAction">
+		 <forward name="success" path="/success.jsp" />  
+		<!--  	<forward name ="error" path ="/error.jsp" /> -->
+		<!--	 <forward name ="welcome" path ="/expenseform.jsp" /> -->
 		</action> 
+		
+		<!-- for welcome page - expense form button-->
+		<action input="/welcome.jsp" name="expenses" path="/expenses" type="com.jwt.struts.action.ExpenseFormAction">
+			 <forward name ="welcome" path ="/expenseform.jsp" /> 
+		</action> 
+		
+		<!-- for welcome page - reports button -->
+		<action input="/welcome.jsp" name="reports" path="/reports" type="com.jwt.struts.action.ExpenseFormAction">
+		 <forward name="welcome" path="/retrieve.jsp" />  
+		</action> 
+		
+		<!-- for welcome page - logout button-->
+		<action input ="/welcome.jsp" name ="logout" path ="/logout" type ="com.jwt.struts.action.UserRegisterAction">
+		<forward name="welcome" path="/logout.jsp" />
+		</action>
+		
+		
 	</action-mappings>
-
+	
 	<message-resources parameter="com/jwt/struts/action/ApplicationResource" />
 
 </struts-config>

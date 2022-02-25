@@ -38,8 +38,8 @@ h2{
        		<span class="form">
        		<form action="/welcome.jsp">
        		<div class ="yui3-skin-sam" style ="margin-left:70px">
-       		<input type="submit" class ="yui3-button" value="Submit">
-       		<button type="reset" class ="yui3-button" value="Reset">Reset</button>
+       		<input type="submit" class ="yui3-button" value="Submit"/>
+       		<input type="reset" class ="yui3-button" value="Reset"/>
        		</div> 
        		</form>
        		</span>

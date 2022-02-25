@@ -5,13 +5,8 @@
 <head>
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.18.1/build/cssbutton/cssbutton.css">
 <style>
-.yui3-button
-{
-	<%-- background-color: #E8BEAC; --%>
-	
-}
 
-.button 
+.button1
 {
   background-color: #E8BEAC;
   border: none;
@@ -30,13 +25,35 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<div id="mySidenav" class="sidenav">
 <body class="yui3-skin-sam">
 <center>
 <h2>Hi! <%=session.getAttribute("userName") %> Welcome to Daily Expenses Application</h2>
 <div class ="yui3-skin-sam">
+<html>
+<table>
+<tr>
+<form action = "expenseform.jsp" method="redirect">
+<input type="submit" style="margin:5px;" class ="yui3-button" value="Expense Form">
+</form>
+<form action = "retrieve.jsp" method="redirect">
+<input type="submit"  style="margin:5px;" class ="yui3-button" value="Reports">
+</form>
+<form action = "logout.jsp" method="redirect">
+<input type="submit"  style="margin:5px;" class ="yui3-button" value="Logout">
+</form>
+</tr>
+</table>
+</div>
+</html>
+
+
+<%--
 <a href ='expenseform.jsp' class ="yui3-button">Expenses Form</a>
 <a href ='retrieve.jsp' class ="yui3-button">Reports</a>
-<a href ='#' class ="yui3-button">Logout</a>
+<a href ='logout.jsp' class ="yui3-button">Logout</a>
+ --%>
+ 
 </div>
 </center>
 </body>
